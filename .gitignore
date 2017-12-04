@@ -9,8 +9,6 @@ __pycache__
 
 mediafiles/
 staticfiles/
-media/
-static/
 
 # virtual environments / Docker env
 .env
