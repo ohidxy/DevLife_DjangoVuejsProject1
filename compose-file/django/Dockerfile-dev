@@ -1,0 +1,13 @@
+FROM python:3.6
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /app
+WORKDIR /app
+
+ADD requirements/base.txt /app/requirements/
+ADD requirements/dev.txt /app/requirements/
+ADD requirements/production.txt /app/requirements/
+
+RUN pip install -r requirements/dev.txt
+
+ADD . /app/

@@ -1,0 +1,18 @@
+### VS Code ###
+.vscode
+
+# Basics
+*.py[cod]
+*.pyc
+__pycache__
+
+
+mediafiles/
+staticfiles/
+media/
+static/
+
+# virtual environments / Docker env
+.env
+.env.production
+.env.staging

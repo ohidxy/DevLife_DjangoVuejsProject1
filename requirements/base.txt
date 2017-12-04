@@ -1,0 +1,4 @@
+# django
+django==1.11.8
+# Python-PostgreSQL Database Adapter
+psycopg2
