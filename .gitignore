@@ -6,6 +6,7 @@
 *.pyc
 __pycache__
 
+dist
 
 mediafiles/
 staticfiles/
