@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-ROOT_DIR = environ.Path(__file__) - 3  # (MyGuide/myguide/myguide/base.py - 3 = MyGuide/)
+ROOT_DIR = environ.Path(__file__) - 3  # (MyGuide/devlife/devlife/base.py - 3 = MyGuide/)
 
 env = environ.Env()
 
@@ -18,7 +18,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'myguide',
+    'devlife',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,13 +37,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'myguide.myguide.urls'
+ROOT_URLCONF = 'devlife.devlife.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'myguide/myguide/templates',
+            'devlife/devlife/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'myguide.myguide.wsgi.application'
+WSGI_APPLICATION = 'devlife.devlife.wsgi.application'
 
 
 # Database
