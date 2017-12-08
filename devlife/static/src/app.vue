@@ -1,20 +1,21 @@
 <script>
+import LoginForm from 'login'
 
-  export default {
-    components: {
+export default {
+  components: {
+    LoginForm,
+  },
+  data: {
 
-    },
-    data: {
+  },
+  computed: {
 
-    },
-    computed: {
+  },
+  methods: {
 
-    },
-    methods: {
+  },
+  created(){
 
-    },
-    created(){
-      
-    }
   }
+}
 </script>
