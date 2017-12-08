@@ -1,0 +1,19 @@
+{
+  "name": "devlife",
+  "version": "1.0.0",
+  "description": "DevLife project is intended for making the life of software developers' lives easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://gitlab.com/ohid93/myguide.git",
+  "author": "S M Ohidul Alam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ohid93/myguide/issues"
+  },
+  "homepage": "https://gitlab.com/ohid93/myguide#README",
+  "dependencies": {
+    "vue": "^2.5.9"
+  }
+}

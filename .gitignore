@@ -15,3 +15,8 @@ staticfiles/
 .env
 .env.production
 .env.staging
+
+node_modules/
+
+# Using yarn lock instead. (Local packagelock/nodemodules is to help with autocomplete)
+package-lock.json
