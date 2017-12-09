@@ -4,7 +4,8 @@
   "description": "DevLife project is intended for making the life of software developers' lives easier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": "git+https://gitlab.com/ohid93/myguide.git",
   "author": "S M Ohidul Alam",
@@ -14,7 +15,11 @@
   },
   "homepage": "https://gitlab.com/ohid93/myguide#README",
   "dependencies": {
-    "vue": "^2.5.9"
+    "urijs": "^1.19.0",
+    "vue": "^2.5.9",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.9"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

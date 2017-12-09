@@ -22,10 +22,10 @@
       {# Use this block for loading CONTENT files from other html files which extend this base.html #}
     {% endblock content %}
 
-    <script src="{% static 'dist/index.js' %}" async></script>
     {% block js %}
       {# Use this block for loading JS files from other html files which extend this base.html #}
     {% endblock js %}
   </div>
+  <script src="{% static 'dist/index.js' %}" async></script>
 </body>
 </html>
