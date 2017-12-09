@@ -10,12 +10,16 @@
           <h1>Register Here</h1>
           <form action="">
             <div class="form-group">
-              <label for="username">Username</label>
-              <input class="form-control" type="text" id="username" placeholder="Username">
+              <label for="email">Email</label>
+              <input class="form-control" type="text" id="email" placeholder="Email">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input class="form-control" type="password" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="confirm_password">Confirm Password</label>
+              <input class="form-control" type="password" id="confirm_password" placeholder="Password">
             </div>
             <button class="btn btn-primary" type="submit">Register</button>
           </form>
