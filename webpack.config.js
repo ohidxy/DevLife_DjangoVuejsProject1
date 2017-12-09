@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     index: ['./devlife/static/src/index.js', /* './devlife/static/src/index.scss' */ ]
   },
+  watch: true,
   output: {
     path: path.resolve(__dirname, './devlife/static/dist'),
     filename: 'index.js'
