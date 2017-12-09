@@ -17,15 +17,18 @@
     {% include 'devlife/nav.html' %}
   </header>
   <div class="container" id="app">
-
     {% block content %}
       {# Use this block for loading CONTENT files from other html files which extend this base.html #}
     {% endblock content %}
-
-    {% block js %}
-      {# Use this block for loading JS files from other html files which extend this base.html #}
-    {% endblock js %}
   </div>
+  
+  <footer>
+    {% include 'devlife/footer.html' %}
+  </footer>
+    
+  {% block js %}
+    {# Use this block for loading JS files from other html files which extend this base.html #}
+  {% endblock js %}
   <script src="{% static 'dist/index.js' %}" async></script>
 </body>
 </html>
