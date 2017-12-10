@@ -1,12 +1,14 @@
 <style lang="scss" scoped>
-
+  .login-form {
+    margin-top: 50px;
+  }
 </style>
 
 <template>
   <div>
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-6">
+      <div class="col-md-6 login-form">
         <h1 class="text-center">Login Here</h1>
         <form action="">
           <div class="form-group">
