@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <h1>Login Here</h1>
+        <h1 class="text-center">Login Here</h1>
         <form action="">
           <div class="form-group">
             <label for="username">Username</label>
