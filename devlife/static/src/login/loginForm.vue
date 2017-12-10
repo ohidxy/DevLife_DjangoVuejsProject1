@@ -1,7 +1,7 @@
 <style lang="scss" scoped>
   .login-form {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 </style>
 
