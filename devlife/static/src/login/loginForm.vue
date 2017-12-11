@@ -8,14 +8,14 @@
   <div @submit.prevent="login" class="login-form">
     <h1 class="text-center">Login Here</h1>
     <form action="">
-      <div class="form-group">
+      <div class="form-group" action="/rest-auth/login/">
         <label for="username">Username</label>
         <input 
           class="form-control" 
           type="text" 
           id="username" 
           placeholder="Username"
-          v-model="email"
+          v-model="username"
           ref="loginInput"
         >
       </div>
@@ -40,12 +40,16 @@
 </template>
 
 <script>
+import axios from 'axios'
+// TODO further customise axios instance for DRY-ness
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 export default {
   data() {
     return {
-      email: '',
+      username: '',
       password: '',
-
       error: '',
     }
   },
@@ -53,31 +57,29 @@ export default {
     loginUrl: {
       type: String,
       required: true,
-    }
+    },
   },
   mounted() {
     this.$refs.loginInput.focus()
   },
   methods: {
     login() {
-      if (!this.email || !this.password) {
+      if (!this.username || !this.password) {
         return
       }
+      const { username, password } = this
       
-      const { email, password } = this
-      this.$http.post( 
-        this.loginUrl,
-        { email, password }
-      ).then(res => {
-        console.log("Login Success!")
-      }).catch(e => {
-        const data = e.response.data
-        console.error(e.response)
-        for (let errorType in data) {
-          for (let error of data[errorType]) {
-            this.error += `${error}\n`
-          }
-        }
+      axios.post(this.loginUrl, {
+        "username": username,
+        "password": password
+      })
+      .then(response => {
+        console.log(response)
+        window.location.reload()
+      })
+      .catch(e => {
+        this.errors.push(e)
+        console.log(e.data)
       })
     }
   },
