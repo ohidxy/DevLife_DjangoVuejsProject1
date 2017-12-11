@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from .views import HomePageView, RegisterView, LoginView, logoutView
+from .views import HomePageView, RegisterView, LoginView, DashboardView, logoutView
 
 urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     
     url(r'^rest-auth/', include('rest_auth.urls')),
+
+    url(r'^dashboard/$', DashboardView.as_view(), name='dashboard'),
 ]
