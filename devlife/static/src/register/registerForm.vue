@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
   .register-form{
-    margin: 50px;
+    margin: 4rem 2rem 4rem 2rem;
   }
 </style>
 
