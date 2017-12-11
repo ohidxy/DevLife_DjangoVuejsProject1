@@ -15,6 +15,21 @@
       </li>
     </ul>
 
+    {% if user.is_authenticated %}
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <strong>{{request.user.username}}</strong>
+        </a>
+      </li>
+      <li class="nav-item">
+        {# Logout via POST Method must be implemented later! Lazy move for now!#}
+        <a class="nav-link" href="{% url 'logout' %}">
+          <strong>Logout</strong>
+        </a>
+      </li>
+    </ul>
+    {% else %}
     <ul class="navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" href="{% url 'login' %}"><strong>Login</strong></a>
@@ -23,6 +38,7 @@
         <a class="nav-link" href="{% url 'register' %}"><strong>Register</strong></a>
       </li>
     </ul>
+    {% endif %}
   </div>
 </div>
 </nav>
