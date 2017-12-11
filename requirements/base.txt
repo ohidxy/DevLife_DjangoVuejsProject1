@@ -6,3 +6,9 @@ psycopg2
 
 # Configuration
 django-environ==0.4.4
+
+# Django Rest Framework
+djangorestframework==3.7.3
+
+# rest_auth has basic auth functionality like login, logout, password reset and password change
+django-rest-auth==0.9.2

@@ -5,7 +5,7 @@
 </style>
 
 <template>
-  <div class="login-form">
+  <div @submit.prevent="login" class="login-form">
     <h1 class="text-center">Login Here</h1>
     <form action="">
       <div class="form-group">
@@ -45,11 +45,43 @@ export default {
     return {
       email: '',
       password: '',
+
+      error: '',
+    }
+  },
+  props: {
+    loginUrl: {
+      type: String,
+      required: true,
     }
   },
   mounted() {
     this.$refs.loginInput.focus()
   },
+  methods: {
+    login() {
+      if (!this.email || !this.password) {
+        return
+      }
+      
+      const { email, password } = this
+      this.$http.post( 
+        this.loginUrl,
+        { email, password }
+      ).then(res => {
+        console.log("Login Success!")
+      }).catch(e => {
+        const data = e.response.data
+        console.error(e.response)
+        for (let errorType in data) {
+          for (let error of data[errorType]) {
+            this.error += `${error}\n`
+          }
+        }
+      })
+    }
+  },
+
 }
 </script>
 
