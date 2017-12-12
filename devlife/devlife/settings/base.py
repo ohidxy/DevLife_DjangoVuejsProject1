@@ -113,3 +113,6 @@ USE_TZ = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
+
+
+LOGIN_REDIRECT_URL = '/dashboard'
