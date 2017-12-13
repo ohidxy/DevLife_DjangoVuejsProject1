@@ -5,9 +5,9 @@
 </style>
 
 <template>
-  <div @submit.prevent="login" class="login-form">
+  <div class="login-form">
     <h1 class="text-center">Login Here</h1>
-    <form action="">
+    <form @submit.prevent="login" action="">
       <div class="form-group" action="/rest-auth/login/">
         <label for="username">Username</label>
         <input 
