@@ -74,13 +74,15 @@ export default {
   },
   methods: {
     login() {
+      
       if (!this.username || !this.password) {
+        this.error = 'Please, fill all fields.'
         return
       }
       const { username, password } = this
-      
-      this.error = ''
 
+      this.error = ''
+      
       axios.post(this.loginUrl, {
         "username": username,
         "password": password
