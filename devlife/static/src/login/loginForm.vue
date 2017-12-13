@@ -31,6 +31,12 @@
           v-model="password"
         >
       </div>
+      <div 
+        class="alert alert-danger text-center"
+        v-show="error"
+      >
+        {{ error }}
+      </div>
       <div class="text-right">
         <button 
           class="btn btn-primary" 
@@ -82,8 +88,13 @@ export default {
         window.location.reload()
       })
       .catch(e => {
-        this.errors.push(e)
-        console.log(e.data)
+        const data = e.response.data
+        console.error(e.response)
+        for (let errorType in data) {
+          for (let error of data[errorType]) {
+            this.error = error
+          }
+        }
       })
     }
   },
