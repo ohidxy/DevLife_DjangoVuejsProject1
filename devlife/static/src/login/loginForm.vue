@@ -79,17 +79,19 @@ export default {
       }
       const { username, password } = this
       
+      this.error = ''
+
       axios.post(this.loginUrl, {
         "username": username,
         "password": password
       })
       .then(response => {
-        console.log(response)
+        // console.log(response)        // Uncomment only during Development
         window.location.reload()
       })
       .catch(e => {
         const data = e.response.data
-        console.error(e.response)
+        // console.error(e.response)    // Uncomment only during Development
         for (let errorType in data) {
           for (let error of data[errorType]) {
             this.error = error
