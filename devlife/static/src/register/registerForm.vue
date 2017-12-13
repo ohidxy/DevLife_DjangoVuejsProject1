@@ -2,6 +2,7 @@
   .register-form{
     margin: 4rem 2rem 4rem 2rem;
     padding: 1rem;
+    background: #ededed;
   }
 </style>
 
