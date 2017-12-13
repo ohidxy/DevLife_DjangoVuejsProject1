@@ -8,27 +8,13 @@
 <template>
   <div class="navigation">
     <ul class="list-group"> 
-      <li class="list-group-item">
-        <a href="#">My Contact</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">My Notes</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">Cheat Sheet</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">Important Links</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">Logbook</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">Files</a>
-      </li>
-      <li class="list-group-item">
-        <a href="#">Trends</a>
-      </li>
+      <a class="list-group-item" href="#">Analytics</a>
+      <a class="list-group-item" href="#">My Notes</a>
+      <a class="list-group-item" href="#">Cheat Sheet</a>
+      <a class="list-group-item" href="#">Important Links</a>
+      <a class="list-group-item" href="#">Logbook</a>
+      <a class="list-group-item" href="#">Files</a>
+      <a class="list-group-item" href="#">Trends</a>
     </ul>
   </div>    
 </template>
