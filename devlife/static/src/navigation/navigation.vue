@@ -2,7 +2,6 @@
   .navigation {
     margin: 3rem 0rem 1rem 0rem;
   }
-  
 </style>
 
 <template>
