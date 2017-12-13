@@ -1,11 +1,12 @@
 <style lang="scss" scoped>
   .login-form {
     margin: 4rem 2rem 4rem 2rem;
+    padding: 1rem;
   }
 </style>
 
 <template>
-  <div class="login-form">
+  <div class="card card-outline-secondary login-form">
     <h1 class="text-center">Login Here</h1>
     <form @submit.prevent="login" action="">
       <div class="form-group" action="/rest-auth/login/">
@@ -29,12 +30,14 @@
           v-model="password"
         >
       </div>
-      <button 
-        class="btn btn-primary" 
-        type="submit"
-      >
-        Login
-      </button>
+      <div class="text-right">
+        <button 
+          class="btn btn-primary" 
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
     </form>
   </div>
 </template>

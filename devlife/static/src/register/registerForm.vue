@@ -1,11 +1,12 @@
 <style lang="scss" scoped>
   .register-form{
     margin: 4rem 2rem 4rem 2rem;
+    padding: 1rem;
   }
 </style>
 
 <template>
-  <div class="register-form">
+  <div class="card card-outline-secondary register-form">
     <h1 class="text-center">Register Here</h1>
     <form action="">
       <div class="form-group">
@@ -39,12 +40,14 @@
           v-model="password2"
         >
       </div>
-      <button 
-        class="btn btn-primary" 
-        type="submit"
-      >
-        Register
-      </button>
+      <div class="text-right">
+        <button 
+          class="btn btn-primary" 
+          type="submit"
+        >
+          Register
+        </button>
+      </div>
     </form>
   </div>
 </template>
