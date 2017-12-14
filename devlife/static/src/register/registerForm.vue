@@ -51,8 +51,10 @@
           v-model="password2"
         >
       </div>
-      <div class="alert alert-danger" v-show="error">
-        {{ error }}
+      <div class="form-group alert alert-danger" v-if="errors.length">
+        <p v-for="(error, index) in errors" :key="index">
+          {{ error }}
+        </p>
       </div>
       <div class="text-right">
         <button 
@@ -79,7 +81,7 @@ export default {
       email: null,
       password1: null,
       password2: null,
-      error: null,
+      errors: [],
     }
   },
   props: {
@@ -93,10 +95,28 @@ export default {
   },
   methods: {
     register() {
-      this.error=''
-      if(!this.username || !this.email || !this.email || !this.password1 || !this.password2){
-        this.error = 'Please, fill up all fields!'
+      this.errors = []
+      if(!this.username || !this.email || !this.password1 || !this.password2){
+        this.errors.push('Please, fill up all fields!')
+        return
       } 
+      const {username, email, password1, password2} = this
+      axios.post(this.registrationUrl,{
+        username,
+        email,
+        password1,
+        password2,
+      }).then(res => {
+        console.log
+      }).catch(err => {
+        let errData = err.response.data
+        console.log(errData)
+        for (let errorType in errData) {
+          for (let error of errData[errorType]) {
+            this.errors.push(error)
+          }
+        }
+      }) 
     }
   }  
 }
