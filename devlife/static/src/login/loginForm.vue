@@ -93,7 +93,7 @@ export default {
         // console.error(e.response)    // Uncomment only during Development
         for (let errorType in data) {
           for (let error of data[errorType]) {
-            this.error = error
+            this.error = `${error}\n`
           }
         }
       })
