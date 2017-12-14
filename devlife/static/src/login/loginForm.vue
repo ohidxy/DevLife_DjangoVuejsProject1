@@ -31,6 +31,12 @@
           v-model="password"
         >
       </div>
+      <div 
+        class="alert alert-danger text-center"
+        v-show="error"
+      >
+        {{ error }}
+      </div>
       <div class="text-right">
         <button 
           class="btn btn-primary" 
@@ -68,22 +74,28 @@ export default {
   },
   methods: {
     login() {
+      this.error = ''
       if (!this.username || !this.password) {
+        this.error = 'Please, fill all fields.'
         return
       }
       const { username, password } = this
-      
       axios.post(this.loginUrl, {
-        "username": username,
-        "password": password
+        username,
+        password
       })
       .then(response => {
-        console.log(response)
+        // console.log(response)        // Uncomment only during Development
         window.location.reload()
       })
       .catch(e => {
-        this.errors.push(e)
-        console.log(e.data)
+        const data = e.response.data
+        // console.error(e.response)    // Uncomment only during Development
+        for (let errorType in data) {
+          for (let error of data[errorType]) {
+            this.error = `${error}\n`
+          }
+        }
       })
     }
   },
