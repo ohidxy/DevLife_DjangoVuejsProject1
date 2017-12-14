@@ -9,7 +9,7 @@
 <template>
   <div class="card card-outline-secondary register-form">
     <h1 class="text-center">Register Here</h1>
-    <form action="">
+    <form @submit.prevent="register" action="">
       <div class="form-group">
         <label for="username">Username</label>
         <input 
@@ -51,6 +51,9 @@
           v-model="password2"
         >
       </div>
+      <div class="alert alert-danger" v-show="error">
+        {{ error }}
+      </div>
       <div class="text-right">
         <button 
           class="btn btn-primary" 
@@ -71,10 +74,19 @@ export default {
       email: null,
       password1: null,
       password2: null,
+      error: null,
     }
   },
   mounted() {
     this.$refs.registerInput.focus()
+  },
+  methods: {
+    register() {
+      this.error=''
+      if(!this.username || !this.email || !this.email || !this.password1 || !this.password2){
+        this.error = 'Please, fill up all fields!'
+      }   
+    }
   }  
 }
 </script>
