@@ -67,6 +67,11 @@
 </template>
 
 <script>
+import axios from 'axios'
+// TODO further customise axios instance for DRY-ness
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 export default {
   data() {
     return {
@@ -77,6 +82,12 @@ export default {
       error: null,
     }
   },
+  props: {
+    registrationUrl: {
+      type: String,
+      required: true,
+    },
+  },
   mounted() {
     this.$refs.registerInput.focus()
   },
@@ -85,7 +96,7 @@ export default {
       this.error=''
       if(!this.username || !this.email || !this.email || !this.password1 || !this.password2){
         this.error = 'Please, fill up all fields!'
-      }   
+      } 
     }
   }  
 }
