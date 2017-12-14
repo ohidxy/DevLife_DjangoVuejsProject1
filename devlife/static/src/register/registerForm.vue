@@ -51,10 +51,12 @@
           v-model="password2"
         >
       </div>
-      <div class="form-group alert alert-danger" v-if="errors.length">
-        <p v-for="(error, index) in errors" :key="index">
-          {{ error }}
-        </p>
+      <div id="status">
+        <div class="alert alert-danger" v-show="errors.length">
+          <p v-for="(error, index) in errors" :key="index">
+            {{ error }}
+          </p>
+        </div>
       </div>
       <div class="text-right">
         <button 
@@ -107,8 +109,9 @@ export default {
         password1,
         password2,
       }).then(res => {
-        console.log
+        console.log('Registration Successful!')
       }).catch(err => {
+        // console.log('There is error!')
         let errData = err.response.data
         console.log(errData)
         for (let errorType in errData) {
