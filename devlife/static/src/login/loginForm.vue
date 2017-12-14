@@ -81,8 +81,8 @@ export default {
       }
       const { username, password } = this
       axios.post(this.loginUrl, {
-        "username": username,
-        "password": password
+        username,
+        password
       })
       .then(response => {
         // console.log(response)        // Uncomment only during Development
