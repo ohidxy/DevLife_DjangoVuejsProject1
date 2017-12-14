@@ -11,6 +11,17 @@
     <h1 class="text-center">Register Here</h1>
     <form action="">
       <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          class="form-control" 
+          type="text" 
+          id="username" 
+          placeholder="Enter your Username here"
+          v-model="username"
+          ref="registerInput"
+        >
+      </div>
+      <div class="form-group">
         <label for="email">Email</label>
         <input 
           class="form-control" 
@@ -18,7 +29,6 @@
           id="email" 
           placeholder="Enter your email here"
           v-model="email"
-          ref="registerInput"
         >
       </div>
       <div class="form-group">
@@ -57,6 +67,7 @@
 export default {
   data() {
     return {
+      username: null,
       email: null,
       password1: null,
       password2: null,
