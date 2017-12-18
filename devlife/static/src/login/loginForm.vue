@@ -76,7 +76,7 @@ export default {
     login() {
       this.error = ''
       if (!this.username || !this.password) {
-        this.error = 'Please, fill all fields.'
+        this.error = 'Please, fill up all fields.'
         return
       }
       const { username, password } = this
