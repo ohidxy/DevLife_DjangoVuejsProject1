@@ -16,5 +16,5 @@ urlpatterns = [
 
     url(r'^dashboard/$', DashboardView.as_view(), name='dashboard'),
 
-    
+    url(r'^contact/', include('devlife.contact.urls')),
 ]

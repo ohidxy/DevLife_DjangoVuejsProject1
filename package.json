@@ -4,7 +4,7 @@
   "description": "DevLife project is intended for making the life of software developers' lives easier",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --port 3000 --inline --hot",
+    "start:dev": "webpack-dev-server",
     "build": "webpack"
   },
   "repository": "git+https://gitlab.com/ohid93/myguide.git",
@@ -16,6 +16,7 @@
   "homepage": "https://gitlab.com/ohid93/myguide#README",
   "dependencies": {
     "axios": "^0.17.1",
+    "npm-watch": "^0.3.0",
     "urijs": "^1.19.0",
     "vue": "^2.5.9",
     "vue-axios": "^2.0.2",

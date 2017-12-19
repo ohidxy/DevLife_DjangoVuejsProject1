@@ -18,6 +18,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'devlife.contact',
     'devlife',
     
     'django.contrib.admin',
