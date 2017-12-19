@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^rest-auth/', include('rest_auth.urls')),
 
     url(r'^dashboard/$', DashboardView.as_view(), name='dashboard'),
+
+    
 ]
