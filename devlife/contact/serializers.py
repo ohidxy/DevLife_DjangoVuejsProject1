@@ -4,4 +4,4 @@ from rest_framework import serializers
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact 
-        exclude = ('id', 'user')       
+        fields = ('__all__')       
