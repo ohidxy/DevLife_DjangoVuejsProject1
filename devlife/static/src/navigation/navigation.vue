@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
   .navigation {
-    margin: 3rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 1rem 0rem;
   }
 </style>
 

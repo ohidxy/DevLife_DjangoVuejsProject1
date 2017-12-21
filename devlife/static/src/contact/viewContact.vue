@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
   .view-contact {
-    margin: 3rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 1rem 0rem;
   }
   p {
     font-size: 0.9rem;
@@ -9,9 +9,6 @@
 
 <template>
 <div class="view-contact">
-  <div class="text-right" style="margin-bottom:0.1rem">
-    <button class="btn btn-primary">Add Contact</button>
-  </div>
   <div class="text-center" >
     <table class="table table-sm table-bordered table-hover">
       <thead>
