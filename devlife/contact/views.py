@@ -16,7 +16,7 @@ def contact_page(request):
 def contact_data(request):
     if request.user.is_authenticated():   # When user is authenticated
         if request.method == 'GET':         # For viewing records
-            contacts = Contact.objects.all().filter(user=1)
+            contacts = Contact.objects.all().filter(user=request.user.id)
             contacts_serialized = ContactSerializer(contacts, many=True)
             return JsonResponse(contacts_serialized.data, safe=False,)
         elif request.method == 'POST':      # For creating a record
