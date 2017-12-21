@@ -20,20 +20,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>john@example.com</td>
-          <td>01115633567</td>
-        </tr>
-        <tr>
-          <td>Mary Moe</td>
-          <td>mary@example.com</td>
-          <td>0857343533</td>
-        </tr>
-        <tr>
-          <td>July Dooley</td>
-          <td>july@example.com</td>
-          <td>0156968943</td>
+        <tr v-for="contact in contacts_data" :key="">
+          <td>{{ contact.first_name }} {{ contact.last_name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.hp_no }}</td>
         </tr>
       </tbody>
     </table>
@@ -42,7 +32,35 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  
+  data(){
+    return {
+      contacts_data: '',
+    }
+  },
+  props: {
+    apiUrl: {
+      type: String,
+      required: true,
+    },
+  },
+  mounted(){
+    this.view_all_contact()
+  },
+  methods: {
+    view_all_contact(){
+      // Make a request for a user with a given ID
+      axios.get(this.apiUrl)
+        .then((res) => {
+          this.contacts_data = res.data
+          console.log(this.contacts_data)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  },
 }
 </script>

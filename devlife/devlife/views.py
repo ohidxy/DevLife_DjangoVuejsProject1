@@ -29,7 +29,7 @@ class DashboardView(TemplateView):
     if request.user.is_authenticated:
       return render(request, "devlife/dashboard.html", {})
     else:
-      return redirect("/")
+      return redirect("/login")
 
 def logoutView(request):
   logout(request)

@@ -1,10 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from devlife.contact.models import Contact
 from devlife.contact.serializers import ContactSerializer
+
+def contact_page(request):
+    if request.user.is_authenticated():
+        if request.method == 'GET':
+          return render(request,'contact/contact.html')
+    else:
+        return redirect('/login')
 
 def contact_data(request):
     if request.user.is_authenticated():   # When user is authenticated
