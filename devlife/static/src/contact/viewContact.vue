@@ -1,15 +1,28 @@
 <style lang="scss" scoped>
   .view-contact {
-    margin: 0rem 0rem 1rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
   }
+
+  .add-button {
+    margin: 0.3rem 0rem 0.3rem 0rem;
+  }
+
   p {
     font-size: 0.9rem;
+    padding: 0rem 0.3rem 0rem 0.3rem; 
   }
 </style>
 
 <template>
-<div class="view-contact">
-  <div class="text-center" >
+<div>
+  <div class="text-center view-contact">
+    <!-- Button trigger modal -->
+    <div class="text-right">
+    <button type="button" class="btn btn-primary text-right add-button" data-toggle="modal" data-target="#exampleModalLong">
+      Add Contact
+    </button>
+    </div>
+
     <table class="table table-sm table-bordered table-hover">
       <thead>
         <tr>

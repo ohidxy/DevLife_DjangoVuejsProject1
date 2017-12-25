@@ -1,18 +1,9 @@
 <style lang="scss" scoped>
-  .add-button {
-    margin: 0.3rem 0rem 0.3rem 0rem;
-  }
+  
 </style>
 
 <template>
   <div class="container">
-    <!-- Button trigger modal -->
-    <div class="text-right">
-    <button type="button" class="btn btn-primary text-right add-button" data-toggle="modal" data-target="#exampleModalLong">
-      Add Contact
-    </button>
-    </div>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
