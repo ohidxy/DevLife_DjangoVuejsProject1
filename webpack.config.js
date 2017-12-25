@@ -12,6 +12,10 @@ const sassLoaderOptions = {
   includePaths: [srcDir]
 }
 
+const fileLoaderOptions = {
+  name: '[path][name].[ext]',
+  context: './devlife/static/src'
+}
 
 module.exports = {
   entry: {
@@ -45,7 +49,7 @@ module.exports = {
           presets:['env']
         }
       },
-
+      // Handle css and scss files
       {
         test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
@@ -56,6 +60,19 @@ module.exports = {
             {loader: 'sass-loader', options: sassLoaderOptions}
           ]
         })
+      },
+      
+      // Handle fonts
+      {
+        test: /\.(svg|woff2?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: [
+          {
+            loader: 'file-loader',
+            options: Object.assign({}, fileLoaderOptions, {
+              name: 'fonts/[name].[ext]'
+            })
+          }
+        ]
       },
 
     ]

@@ -17,17 +17,18 @@
 
     {% if user.is_authenticated %}
     <ul class="navbar-nav navbar-right">
-      <li class="nav-item">
-        <a class="btn btn-success" href="#">
-          <strong>{{request.user.username}}</strong>
-        </a>
-      </li> &nbsp;
-      <li class="nav-item">
-        {# Logout via POST Method must be implemented later! Lazy move for now!#}
-        <a class="btn btn-danger" href="{% url 'logout' %}">
-          <strong>Logout</strong>
-        </a>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <strong>{{request.user.username}}</strong>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Account Settings</a>
+            {# <a class="dropdown-item" href="#">Another action</a> #}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          </div>
+        </li>
     </ul>
     {% else %}
     <ul class="navbar-nav navbar-right">
