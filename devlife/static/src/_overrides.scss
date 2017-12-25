@@ -1,0 +1,45 @@
+// Colors
+$blue:              #007bff;
+$indigo:            #6610f2;
+$purple:            #6f42c1;
+$pink:              #e83e8c;
+$red:               #dc3545;
+$crimson:           #dd282d;
+$orange:            #fd7e14;
+$yellow:            #ffc107;
+$green:             #28a745;
+$teal:              #20c997;
+$cyan:              #17a2b8;
+$cerulean:          #00b9da;
+$pizazz:            #ff9603;
+$azure-radiance:    #0193F3;
+$atlantis:          #8cca2b;
+$vida-loca:         #479722;
+$jade:              #00bb66;
+$pickled-bluewood:  #263845;
+$blue-zodiac:       #123b5e;
+$matisse:           #1f68a5;
+$picton-blue:       #2D95EC;
+$cornflower-blue:   #6CB4F1;
+
+// Brand colors
+$linkedin-blue: #0077B5;  // https://brand.linkedin.com/visual-identity/color-palettes
+$facebook-blue: #3B5998;
+$google-plus-red: #D34836;
+$youtube-red: #FF0000;  // https://www.youtube.com/intl/en-GB/yt/about/brand-resources/#logos-icons-colors
+
+
+// Font Stacks
+$roboto-font-stack: 'Roboto', sans-serif;
+$arial-font-stack: Arial, Helvetica, sans-serif;
+
+
+// Full heights (TODO change with something better)
+$nav-height: 5rem;
+$footer-height: 22rem;
+
+// Full height with nav bar
+$full-height-nav: calc(100vh - #{$nav-height});
+// Full height with navbar and footer
+$full-height-nav-footer: calc(100vh - #{$nav-height} - #{$footer-height});
+

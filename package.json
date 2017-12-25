@@ -16,7 +16,11 @@
   "homepage": "https://gitlab.com/ohid93/myguide#README",
   "dependencies": {
     "axios": "^0.17.1",
+    "bootstrap": "^4.0.0-beta.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "npm-watch": "^0.3.0",
+    "postcss-loader": "^2.0.9",
+    "precss": "^2.0.0",
     "urijs": "^1.19.0",
     "vue": "^2.5.9",
     "vue-axios": "^2.0.2",
