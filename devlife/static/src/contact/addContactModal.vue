@@ -55,7 +55,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Twitter"
+                  placeholder="Twitter (URL)"
                   v-model="twitter"
                 >
               </div>
@@ -63,7 +63,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Github"
+                  placeholder="Github (URL)"
                   v-model="github"
                 >
               </div>
@@ -74,6 +74,9 @@
                   placeholder="Company"
                   v-model="company"
                 >
+              </div>
+              <div class="alert alert-success text-center" v-if="addContactSuccess">
+                You have successfully added a contact!
               </div>
               <div class="text-right">
                 <button 
@@ -107,6 +110,7 @@ export default {
       twitter: '',
       github: '',
       company: '',
+      addContactSuccess: false,
       apiUrl: 'http://localhost:8000/contact/api/',
     }
   },
@@ -134,9 +138,12 @@ export default {
         github,
         company,
       })
-      .then()
+      .then((res) => {
+        this.addContactSuccess = true
+        // console.log(res)
+      })
       .catch((err) => {
-        console.log(err)
+        console.log(err.data)
       });
     }
   }
