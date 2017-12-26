@@ -113,6 +113,7 @@ export default {
       }).catch(err => {
         // console.log('There is error!')
         let errData = err.response.data
+        console.log(errData)
         for (let errorType in errData) {
           for (let error of errData[errorType]) {
             this.errors.push(error)

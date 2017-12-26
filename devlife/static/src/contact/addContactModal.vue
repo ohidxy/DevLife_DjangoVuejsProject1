@@ -75,9 +75,16 @@
                   v-model="company"
                 >
               </div>
+
               <div class="alert alert-success text-center" v-if="addContactSuccess">
                 You have successfully added a contact!
               </div>
+              <div class="alert alert-danger" v-show="errors.length">
+                <div v-for="error in errors" :key="error">
+                  {{error}}
+                </div>
+              </div>
+
               <div class="text-right">
                 <button 
                   class="btn btn-success btn-right" 
@@ -111,6 +118,7 @@ export default {
       github: '',
       company: '',
       addContactSuccess: false,
+      errors: [],
       apiUrl: 'http://localhost:8000/contact/api/',
     }
   },
@@ -119,6 +127,8 @@ export default {
   },
   methods: {
     submitContact() {
+      this.errors = [] //reset the error in every submit
+      this.addContactSuccess = false
       const {
         first_name,
         last_name,
@@ -140,11 +150,30 @@ export default {
       })
       .then((res) => {
         this.addContactSuccess = true
-        // console.log(res)
+        this.clearFields()   //Clears the fields on success
       })
       .catch((err) => {
-        console.log(err.data)
+        let errData = err.response.data
+        let errTypeData = ''
+        for (let errType in errData) {
+          // console.log(errType, ': ')
+          for (let value in errData[errType]){
+            errTypeData = errType.toUpperCase().replace('_', ' ')
+            this.errors.push(errTypeData + ': ' + errData[errType][value]) 
+          }
+        } 
       });
+    },
+
+    clearFields() {
+      // This method for clearing the fields on success
+      this.first_name = ''
+      this.last_name = ''
+      this.email = ''
+      this.hp_no = ''
+      this.twitter = ''
+      this.github = ''
+      this.company = ''
     }
   }
 }
