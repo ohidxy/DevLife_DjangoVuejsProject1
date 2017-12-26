@@ -37,7 +37,7 @@
           <td><p>{{ contact.first_name }} {{ contact.last_name }}</p></td>
           <td><p>{{ contact.email }}</p></td>
           <td><p>{{ contact.hp_no }}</p></td>
-          <td class="text-center"><button class="btn btn-success btn-sm">View/Edit</button></td>
+          <td class="text-center"><button class="btn btn-default btn-sm">View/Edit</button></td>
         </tr>
       </tbody>
     </table>
