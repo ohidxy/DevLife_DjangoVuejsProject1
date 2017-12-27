@@ -28,6 +28,8 @@ class ContactData(APIView):
             contacts = Contact.objects.all().filter(user=request.user.id)
             contacts_serialized = ContactSerializer(contacts, many=True)
             return JsonResponse(contacts_serialized.data, safe=False,)
+        else:
+            return HttpResponse("You are not authorized to access!")
 
     def post(self, request):
         if request.user.is_authenticated():   # When user is authenticated

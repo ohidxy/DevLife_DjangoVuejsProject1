@@ -41,6 +41,9 @@
         </tr>
       </tbody>
     </table>
+    <template v-if="no_contact">
+      <h4 class="text-center">There is no contact yet!</h4>
+    </template>
   </div>
 </div>
 </template>
@@ -51,7 +54,8 @@ import axios from 'axios'
 export default {
   data(){
     return {
-      contacts_data: '',
+      contacts_data: null,
+      no_contact: false,
     }
   },
   props: {
@@ -69,6 +73,11 @@ export default {
       axios.get(this.apiUrl)
         .then((res) => {
           this.contacts_data = res.data
+          if (this.contacts_data.length===0){
+            this.no_contact = true
+          }else {
+            this.no_contact = false
+          }
         })
         .catch((err) => {
           console.log(err);
