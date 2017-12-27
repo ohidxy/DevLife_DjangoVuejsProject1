@@ -7,10 +7,10 @@ class Contact(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    hp_no = models.CharField(max_length=128)
-    twitter = models.URLField(max_length=50)
-    github = models.URLField(max_length=50)
-    company = models.CharField(max_length=100)
+    hp_no = models.CharField(max_length=128, blank=True)
+    twitter = models.URLField(max_length=50, blank=True)
+    github = models.URLField(max_length=50, blank=True)
+    company = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

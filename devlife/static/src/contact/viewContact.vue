@@ -28,7 +28,7 @@
         <tr>
           <th class="text-center">Full Name</th>
           <th class="text-center">Email</th>
-          <th class="text-center">HP No</th>
+          <!-- <th class="text-center">HP No</th> -->
           <th class="text-center">Action</th>
         </tr>
       </thead>
@@ -36,7 +36,7 @@
         <tr v-for="contact in contacts_data" :key="contact.user">
           <td><p>{{ contact.first_name }} {{ contact.last_name }}</p></td>
           <td><p>{{ contact.email }}</p></td>
-          <td><p>{{ contact.hp_no }}</p></td>
+          <!-- <td><p>{{ contact.github }}</p></td> -->
           <td class="text-center"><button class="btn btn-default btn-sm">View/Edit</button></td>
         </tr>
       </tbody>
