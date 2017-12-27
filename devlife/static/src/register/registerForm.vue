@@ -19,6 +19,7 @@
           placeholder="Enter your Username here"
           v-model="username"
           ref="registerInput"
+          required
         >
       </div>
       <div class="form-group">
@@ -29,6 +30,7 @@
           id="email" 
           placeholder="Enter your email here"
           v-model="email"
+          required
         >
       </div>
       <div class="form-group">
@@ -39,6 +41,7 @@
           id="password"
           placeholder="Enter a password"
           v-model="password1"
+          required
         >
       </div>
       <div class="form-group">
@@ -49,6 +52,7 @@
           id="confirm_password" 
           placeholder="Enter the password again."
           v-model="password2"
+          required
         >
       </div>
       <div id="status">
