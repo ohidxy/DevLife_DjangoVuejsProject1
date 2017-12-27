@@ -20,7 +20,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="First Name"
+                  placeholder="First Name *"
                   v-model="first_name"
                   required
                 >
@@ -29,7 +29,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Last Name" 
+                  placeholder="Last Name *" 
                   v-model="last_name"
                   required
                 >
@@ -38,7 +38,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Email" 
+                  placeholder="Email *" 
                   v-model="email"
                   required
                 >
@@ -47,7 +47,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Phone Number (Hp No)"
+                  placeholder="HP No (Handphone No)"
                   v-model="hp_no"
                 >
               </div>
@@ -71,7 +71,7 @@
                 <input 
                   class="form-control" 
                   type="text" 
-                  placeholder="Company"
+                  placeholder="Company (Optional)"
                   v-model="company"
                 >
               </div>
@@ -94,6 +94,7 @@
                 </button>
               </div>
             </form>
+            <p class="text-center">* - mandatory field</p>
           </div>
         </div>
       </div>
