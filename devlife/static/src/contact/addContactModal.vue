@@ -5,11 +5,11 @@
 <template>
   <div class="container">
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Add Contact</h5>
+            <h5 class="modal-title" id="addContactModalLongTitle">Add Contact</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -22,6 +22,7 @@
                   type="text" 
                   placeholder="First Name *"
                   v-model="first_name"
+                  ref="contactInput"
                   required
                 >
               </div>
@@ -125,6 +126,9 @@ export default {
   },
   props: {
 
+  },
+  mounted () {
+    this.$refs.contactInput.focus()
   },
   methods: {
     submitContact() {

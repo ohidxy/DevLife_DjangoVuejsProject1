@@ -18,7 +18,7 @@
   <div class="text-center view-contact">
     <!-- Button trigger modal -->
     <div class="text-right">
-    <button type="button" class="btn btn-primary text-right add-button" data-toggle="modal" data-target="#exampleModalLong">
+    <button type="button" class="btn btn-primary text-right add-button" data-toggle="modal" data-target="#addContactModal">
       Add Contact
     </button>
     </div>
@@ -36,8 +36,11 @@
         <tr v-for="contact in contacts_data" :key="contact.user">
           <td><p>{{ contact.first_name }} {{ contact.last_name }}</p></td>
           <td><p>{{ contact.email }}</p></td>
-          <!-- <td><p>{{ contact.github }}</p></td> -->
-          <td class="text-center"><button class="btn btn-default btn-sm">View/Edit</button></td>
+          <td class="text-center">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editContactModal">
+              View/Edit
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -45,19 +48,28 @@
       <h4 class="text-center">There is no contact yet!</h4>
     </template>
   </div>
+
+  <vue-content-loading v-if="content_loading" :width="300" :height="50">
+    <text x="110" y="25">Loading...</text>
+  </vue-content-loading>
 </div>
 </template>
 
 <script>
 import axios from 'axios'
+import VueContentLoading from 'vue-content-loading';
 
 export default {
   data(){
     return {
+      content_loading: true,
       contacts_data: null,
       no_contact: false,
     }
   },
+  components: {
+        VueContentLoading,
+      },
   props: {
     apiUrl: {
       type: String,
@@ -65,7 +77,7 @@ export default {
     },
   },
   mounted(){
-    this.view_all_contact()
+    // this.view_all_contact()
   },
   methods: {
     view_all_contact(){
@@ -78,11 +90,19 @@ export default {
           }else {
             this.no_contact = false
           }
+          this.content_loading = false
         })
         .catch((err) => {
           console.log(err);
         });
     }
+  },
+  created: function() {
+    this.view_all_contact()
+    /* setTimeout(() => {
+      this.view_all_contact()
+    }, 5000);
+    */
   },
 }
 </script>
