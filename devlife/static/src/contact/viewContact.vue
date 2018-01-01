@@ -37,7 +37,9 @@
           <td><p>{{ contact.first_name }} {{ contact.last_name }}</p></td>
           <td><p>{{ contact.email }}</p></td>
           <td class="text-center">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editContactModal">
+            <button type="button" class="btn btn-default" 
+              
+            >
               View/Edit
             </button>
           </td>
@@ -47,7 +49,7 @@
     <template v-if="no_contact">
       <h4 class="text-center">There is no contact yet!</h4>
     </template>
-  </div>
+  </div>  
 
   <vue-content-loading v-if="content_loading" :width="300" :height="50">
     <text x="110" y="25">Loading...</text>

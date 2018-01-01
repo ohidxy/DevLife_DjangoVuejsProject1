@@ -27,10 +27,10 @@ class ContactData(APIView):
         if request.user.is_authenticated():   # When user is authenticated
             contacts = Contact.objects.all().filter(user=request.user.id)
             contacts_serialized = ContactSerializer(contacts, many=True)
-            return JsonResponse(contacts_serialized.data, safe=False,)
+            return Response(contacts_serialized.data)
         else:
-            return HttpResponse("You are not authorized to access!")
-
+            return Response("You are not authorized to access!")
+    
     def post(self, request):
         if request.user.is_authenticated():   # When user is authenticated
             dict_data = request.data
@@ -43,7 +43,17 @@ class ContactData(APIView):
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else: # When user is not authenticated 
             return HttpResponse("You are not authorized to access!")
-        
-        
 
-# Create your views here.
+
+
+class ContactDetail(APIView):
+    def get(self, request, pk):
+        if request.user.is_authenticated():   # When user is authenticated
+            try:
+                contact_serialized = ContactSerializer(Contact.objects.get(pk=pk, user=request.user.id))
+                return Response(contact_serialized.data)
+            except Exception:
+                return Response("You are not authorized to access!")
+        else:
+            return HttpResponse("You are not authorized to access!")
+
