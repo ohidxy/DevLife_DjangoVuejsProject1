@@ -10,11 +10,11 @@
       <a class="list-group-item" href="/dashboard">Dashboard</a>
       <a class="list-group-item" href="/contact">Contact</a>
       <a class="list-group-item" href="#">My Notes</a>
-      <a class="list-group-item" href="#">Cheat Sheet</a>
+      <!-- <a class="list-group-item" href="#">Cheat Sheet</a>
       <a class="list-group-item" href="#">Important Links</a>
       <a class="list-group-item" href="#">Logbook</a>
       <a class="list-group-item" href="#">Files</a>
-      <a class="list-group-item" href="#">Trends</a>
+      <a class="list-group-item" href="#">Trends</a> -->
     </ul>
   </div>    
 </template>
