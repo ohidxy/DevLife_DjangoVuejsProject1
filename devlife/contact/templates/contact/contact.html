@@ -4,10 +4,14 @@
 
 {% block content %}
 
-<add-contact-modal>
+<add-contact-modal
+  api-url="{% url 'contact_data_api' %}"
+>
 </add-contact-modal>
 
-<edit-contact-modal>
+<edit-contact-modal
+  api-url="{% url 'contact_data_api' %}"
+>
 </edit-contact-modal>
 
 <div class="container">
