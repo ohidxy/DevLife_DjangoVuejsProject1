@@ -121,11 +121,13 @@ export default {
       company: '',
       addContactSuccess: false,
       errors: [],
-      apiUrl: 'http://localhost:8000/contact/api/',
     }
   },
   props: {
-
+    apiUrl: {
+      type: String,
+      required: true
+    }
   },
   mounted () {
     this.$refs.contactInput.focus()
