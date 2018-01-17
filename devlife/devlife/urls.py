@@ -8,13 +8,16 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     
     url(r'^logout/$', logoutView , name='logout'),
-
     url(r'^admin/', admin.site.urls),
     
+
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
+    # Dashboard URL
     url(r'^dashboard/$', DashboardView.as_view(), name='dashboard'),
 
+    # Redirects to apps
     url(r'^contact/', include('devlife.contact.urls')),
+    url(r'^todo/',include('devlife.todo.urls')),
 ]
