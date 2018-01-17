@@ -9,7 +9,7 @@
     <ul class="list-group"> 
       <a class="list-group-item" href="/dashboard">Dashboard</a>
       <a class="list-group-item" href="/contact">Contact</a>
-      <a class="list-group-item" href="#">My Notes</a>
+      <a class="list-group-item" href="#">To Do</a>
       <!-- <a class="list-group-item" href="#">Cheat Sheet</a>
       <a class="list-group-item" href="#">Important Links</a>
       <a class="list-group-item" href="#">Logbook</a>
