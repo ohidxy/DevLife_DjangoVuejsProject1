@@ -1,7 +1,7 @@
 ### VS Code ###
 .vscode
 
-# Basics
+### Basics ###
 *.py[cod]
 *.pyc
 __pycache__
