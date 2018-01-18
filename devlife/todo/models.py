@@ -8,3 +8,6 @@ class Todo(models.Model):
     description = models.TextField()
     due_date = models.DateTimeField()
     active_status = models.BooleanField()
+
+    def __str__(self):
+        return self.title
