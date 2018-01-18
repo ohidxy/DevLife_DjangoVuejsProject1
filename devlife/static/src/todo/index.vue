@@ -11,20 +11,21 @@
         <li class="nav-item">
           <button 
             @click="selectedComponent = 'all-tasks'" 
-            class="nav-link active" data-toggle="tab" href="#home" role="tab"
+            class="nav-link active" data-toggle="tab" role="tab"
             >All Tasks
           </button>
         </li>
         <li class="nav-item">
           <button 
             @click="selectedComponent = 'add-task'" 
-            class="nav-link" data-toggle="tab" href="#profile" role="tab"
+            class="nav-link" data-toggle="tab" role="tab"
             >Add Task
           </button>
         </li>
       </ul>
     </div>
     
+    <!-- Non-alive component as we want to refresh everytime -->
     <component :is="selectedComponent"></component>
     
     
