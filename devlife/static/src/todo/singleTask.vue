@@ -1,9 +1,19 @@
 <style lang="scss" scoped>
   .task {
-    border: solid 0.1rem #e6e600;
+    margin: 0.5rem 0 0 0;
     padding: 0.5rem;
-    background-color:#ffffe6;
     border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.2rem #f2f2f2;
+  }
+
+  .pending {
+    border: solid 0.1rem #e6e600;
+    background: linear-gradient(to right, #ffffcc, #ffffe6);
+  }
+  
+  .done {
+    border: solid 0.1rem #88cc00;
+    background: linear-gradient(to right, #eeffcc, #f7ffe6);
   }
 
   .no-line-break {
@@ -13,7 +23,7 @@
 </style>
 
 <template>
-  <div class="task">
+  <div class="task done">
     <div class="row">
       <div class="col-md-9 col-xs-9 no-line-break">
         <p><strong>Title: </strong> here you go the titles</p>
