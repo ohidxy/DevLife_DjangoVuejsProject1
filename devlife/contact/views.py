@@ -42,7 +42,7 @@ class ContactData(APIView):
             else: 
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else: # When user is not authenticated 
-            return HttpResponse("You are not authorized to access!")
+            return Response("You are not authorized to access!")
 
 
 
