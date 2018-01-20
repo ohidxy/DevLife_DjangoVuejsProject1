@@ -6,13 +6,40 @@
 
 <template>
   <div class="all-task">
-    <single-task></single-task>
+
+      <single-task
+        v-for="task in task_data" :key="task"
+        :title="task.title"
+        :description="task.description"
+        due-date="12/05/2018"
+        status="pending"
+      >
+      </single-task>
+
   </div>
 </template>
 
 <script>
   import SingleTask from './singleTask.vue'
   export default {
+    data() {
+      return {
+        task_data: {
+          task1 : {
+            title: 'this is title 1',
+            description: 'this is the description of title 1'
+          },
+          task2 : {
+            title: 'this is title 2',
+            description: 'this is the description of title 2'
+          },
+          task3 : {
+            title: 'this is title 3',
+            description: 'this is the description of title 3'
+          },
+        },
+      }
+    },
     components: {
       SingleTask,
     }

@@ -6,6 +6,12 @@
     box-shadow: 0.1rem 0.2rem #f2f2f2;
   }
 
+  .task:hover {
+    border: solid 0.1rem #b3b3b3;
+    background: #f2f2f2;
+    cursor: pointer;
+  }
+
   .pending {
     border: solid 0.1rem #e6e600;
     background: linear-gradient(to right, #ffffcc, #ffffe6);
@@ -20,15 +26,19 @@
     margin-top: 0.3rem;
     line-height: 0.3rem;
   }
+
+  button:hover, a:hover {
+    cursor: pointer;
+  }
 </style>
 
 <template>
   <div class="task done">
     <div class="row">
       <div class="col-md-9 col-xs-9 no-line-break">
-        <p><strong>Title: </strong> here you go the titles</p>
-        <p><strong>Due Date: </strong> 01/02/2017. <strong>Status: </strong> pending</p>
-        <p><strong>Description: </strong> here the description goes.....</p>
+        <p><strong>Title: </strong> {{ title }}</p>
+        <p><strong>Due Date: </strong> {{ dueDate }}. <strong>Status: </strong> {{ status }} </p>
+        <p><strong>Description: </strong> {{ description }} </p>
       </div>
       <div class="col-md-3 col-xs-3 text-right">
         <button class="btn btn-primary"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button>
@@ -40,7 +50,27 @@
 </template>
 
 <script>
-export default {
-  
-}
+  export default {
+    data(){
+      return {
+      }
+    },
+    props: {
+      title: {
+        type: String,
+        required: true,
+      },
+      description: {
+        type: String,
+        required: true,
+      },
+      dueDate: {
+        required: true,
+      },
+      status: {
+        type: String,
+        required: true,
+      }
+    }
+  }
 </script>
