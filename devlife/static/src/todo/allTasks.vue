@@ -12,7 +12,7 @@
         :title="task.title"
         :description="task.description"
         due-date="12/05/2018"
-        status="task.status"
+        status="pending"
       >
       </single-task>
 

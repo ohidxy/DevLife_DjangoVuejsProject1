@@ -33,7 +33,7 @@
 </style>
 
 <template>
-  <div class="task done">
+  <div class="task" :class="statusClass">
     <div class="row">
       <div class="col-md-9 col-xs-9 no-line-break">
         <p><strong>Title: </strong> {{ title }}</p>
@@ -70,6 +70,14 @@
       status: {
         type: String,
         required: true,
+      }
+    },
+    computed: {
+      statusClass() {
+        return {
+          'pending': this.status==='pending', 
+          'done': this.status==='done'
+        }
       }
     }
   }
