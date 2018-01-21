@@ -12,7 +12,7 @@
         :title="task.title"
         :description="task.description"
         due-date="12/05/2018"
-        status="pending"
+        status="task.status"
       >
       </single-task>
 
@@ -20,20 +20,17 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import SingleTask from './singleTask.vue'
+  
   export default {
+    components: {
+      SingleTask,
+    },
     data() {
       return {
-        task_data: {
-          task1 : {
-            title: 'this is title 1',
-            description: 'this is the description of title 1'
-          },
-          task2 : {
-            title: 'this is title 2',
-            description: 'this is the description of title 2'
-          }
-        },
+        task_data: null,
+        no_task: true,
       }
     },
     props: {
@@ -42,9 +39,25 @@
         required: true
       }
     },
-    components: {
-      SingleTask,
-    }
+    mounted(){
+      this.get_all_data()
+    },
+    methods: {
+      get_all_data() {
+        axios.get(this.apiUrl)
+        .then((res) => {
+          this.task_data = res.data
+          if (this.task_data.length===0){
+            this.no_task = true
+          }else {
+            this.no_task = false
+          }
+        })
+        .catch((err) => {
+          //yet to finish
+        });
+      }
+    },
   }
 </script>
 
