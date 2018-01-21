@@ -26,7 +26,7 @@
     </div>
     
     <!-- Non-alive component as we want to refresh everytime -->
-    <component :is="selectedComponent"></component>
+    <component :is="selectedComponent" :api-url="apiUrl"></component>
     
     
 </div>
@@ -39,6 +39,12 @@
     data() {
       return {
         selectedComponent: 'all-tasks',
+      }
+    },
+    props: {
+      apiUrl: {
+        type: String,
+        required: true,
       }
     },
     components: {

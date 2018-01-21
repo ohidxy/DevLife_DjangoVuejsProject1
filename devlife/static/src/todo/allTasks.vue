@@ -8,7 +8,7 @@
   <div class="all-task">
 
       <single-task
-        v-for="task in task_data" :key="task"
+        v-for="(task,index) in task_data" :key="index"
         :title="task.title"
         :description="task.description"
         due-date="12/05/2018"
@@ -32,12 +32,14 @@
           task2 : {
             title: 'this is title 2',
             description: 'this is the description of title 2'
-          },
-          task3 : {
-            title: 'this is title 3',
-            description: 'this is the description of title 3'
-          },
+          }
         },
+      }
+    },
+    props: {
+      apiUrl: {
+        type: String,
+        required: true
       }
     },
     components: {
