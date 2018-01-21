@@ -7,7 +7,12 @@ class Todo(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     due_date = models.DateTimeField()
-    active_status = models.BooleanField()
+    STATUS = (
+        ('pending', 'pending'),
+        ('done', 'done'),
+        ('delayed', 'delayed'),
+    )
+    active_status = models.CharField(max_length=20,choices=STATUS, default='pending')
 
     def __str__(self):
         return self.title

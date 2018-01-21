@@ -22,6 +22,11 @@
     background: linear-gradient(to right, #eeffcc, #f7ffe6);
   }
 
+  .delayed {
+    border: solid 0.1rem #ff7d7d;
+    background: linear-gradient(to right, #fcdfdf, #ffeeee);
+  }
+
   .no-line-break {
     margin-top: 0.3rem;
     line-height: 0.3rem;
@@ -76,7 +81,8 @@
       statusClass() {
         return {
           'pending': this.status==='pending', 
-          'done': this.status==='done'
+          'done': this.status==='done',
+          'delayed': this.status==='delayed',
         }
       }
     }
